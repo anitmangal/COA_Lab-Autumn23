@@ -1,0 +1,34 @@
+# Assignment 3
+# Problem 1
+# Semester 5
+# Group 47
+# Anit Mangal, Omair Alam
+
+Algorithm:
+For every starting index in the array, find the maximum sum possible in a circular traversal. Update maxsum if this sum exceeds it.
+
+- It is assumed that if all elements are negative, the maxsum printed should be 0.
+
+C - style pseudocode:
+
+int f(int start) {
+	int currsum = arr[start]
+	int maxsum = currsum
+	int i = (start+1)%n
+	while (i != start) {
+		currsum += arr[i]
+		if (currsum > maxsum) maxsum = currsum
+		i = (i+1)%n
+	}
+	return maxsum
+}
+
+int main() {
+	(take input)
+	int mx = 0;
+	for (int i = 0; i < n; i++) {
+		int curr = f(arr, n, i)
+		if (curr > mx) mx = curr
+	}
+	print result (value is mx)
+}

@@ -1,0 +1,9 @@
+Algorithm:
+
+int f(i, n):
+	if (i > n) return 0	// Base case
+	return pow(i, i)+f(i+1,n) // Recursive case
+
+input n
+check n > 0
+print f(1, n)

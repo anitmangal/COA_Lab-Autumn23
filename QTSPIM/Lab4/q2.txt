@@ -1,0 +1,11 @@
+Algorithm:
+
+int f(i):
+	if (i == 1) return 0			// Base case
+	// Recursive case
+	if (i%2 == 0) return 1+f(i/2)
+	return 1+f(3*i + 1)
+
+input n
+check n > 0
+print f(n)
