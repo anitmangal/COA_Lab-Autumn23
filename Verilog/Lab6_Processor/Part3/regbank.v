@@ -22,8 +22,8 @@ module regbank(output reg [31:0] regA, output reg [31:0] regB, input [4:0] readp
             for (i = 0; i <= 15; i=i+1) regfile[i] <= 32'b00000000000000000000000000000000;
             sp <= 32'b11111111111111111111111111111100;
         end
-        // If Control Signal for writing is enabled, write into specific register
-        else if (RegWrite) begin
+        // If Control Signal for writing is enabled, write into specific register, except for R0
+        else if (RegWrite && writeport > 0) begin
             if (writeport < 16) regfile[writeport[3:0]] <= writedata;
             else sp <= writedata;
         end
