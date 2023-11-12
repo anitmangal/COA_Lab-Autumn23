@@ -8,7 +8,7 @@
 `timescale 1ps/1ps
 module test();
     reg INT, clk;
-    wire [31:0] testREGval;
+    wire signed [31:0] testREGval;
     top T(testREGval, INT, clk);
     always begin
         #1 clk = ~clk;
@@ -17,7 +17,7 @@ module test();
         $dumpfile("test.vcd");
         $dumpvars;
         clk = 1;
-        INT = 1;
+        INT = 0;
         $monitor($time, " REG15 = %d", testREGval);
         #7000 $finish;
     end
