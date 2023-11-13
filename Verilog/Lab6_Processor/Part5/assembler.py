@@ -11,6 +11,8 @@ def main(source_file, output_file):
     instructs = []
     with open(source_file, 'r') as f:
         for lno, line in enumerate(f.readlines()):
+            if (line[0] == '/' and line[1] == '/'):
+                continue
             line = line.strip()
             if line == '' or line[0] == '//':
                 continue
@@ -146,7 +148,7 @@ def main(source_file, output_file):
                     instructs.append(instr)
                 else:
                     raise Exception("Error: Invalid instruction at line {}".format(lno))
-
+    # Write instructions to file in binary format of 8-bit blocks
     with open(output_file, 'w') as f:
         for instr in instructs:
             f.write(instr[0:8]+" "+instr[8:16]+" "+instr[16:24]+" "+instr[24:33]+"\n")

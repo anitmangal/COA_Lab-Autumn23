@@ -1,3 +1,7 @@
+# Computer Organization Laboratory-Autumn 23
+Assignments for the Compilers Laboratory course by [Anit Mangal](https://github.com/anitmangal) and Omair Alam.
+
+## Build and simulate
 - Write assembly instructions according to given Instruction Set
 - Translate into 32-bit instructions of the designed ISA
 ```

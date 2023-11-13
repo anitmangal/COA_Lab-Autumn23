@@ -47,6 +47,7 @@ module fpga_top(output reg [15:0] out, input clk, input INT, input myclk);
                     state <= 0;
                     out[5:0] <= fpstate;
                 end
+                
             end
             1: begin
                 out <= 16'b1111111111111111;
